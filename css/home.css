@@ -1,0 +1,152 @@
+#loading-screen {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+#loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* === Base Styles === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image:url(../images/background.png);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+  z-index: -1; 
+}
+
+.burger-btn {
+  border: none;
+  background: none;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+.burger-btn:hover {
+  background-color: #999999;
+  cursor: pointer;
+}
+
+
+/* PROFILE ICON */
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.profile-icon:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+/* PROFILE ICON */
+
+
+/* === Header Styles === */
+.hero-section {
+  background: linear-gradient(135deg, #3d84ff, #3d84ff); /* Deep blue gradient */
+  padding: 100px 0;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.hero-section h1,
+.hero-section p {
+  color: white;
+}
+
+.hero-section .form-control {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.hero-section .form-control::placeholder {
+  color: #e0e0e0;
+}
+
+.hero-section .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: rgb(255, 255, 255);
+}
+
+.hero-section .btn-primary {
+  color: #3498db;
+  border: none;
+}
+
+.hero-section .btn-primary:hover {
+  color: #0d2247;
+}
+.job-card-wrapper {
+  text-decoration: none;
+  color: inherit;
+}
+.not-clickable {
+  pointer-events: none;
+  cursor: default;
+}
+
+
+
+
+/* === Responsive Grid === */
+@media (max-width: 992px) {
+  .job-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .job-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .right-section {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
